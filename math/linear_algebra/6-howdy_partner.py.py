@@ -2,6 +2,6 @@
 """cat_arrays"""
 
 
-def cat_arrays(arr1, arr2):(mat1, mat2):
+def cat_arrays(arr1, arr2):
     """Concatenates two arrays"""
     return arr1 + arr2
