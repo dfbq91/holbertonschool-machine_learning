@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-"""Plot a line graph with x and y values."""
 import numpy as np
 import matplotlib.pyplot as plt
 
 
 def change_scale():
-    """Plot a line graph with x and y values."""
     x = np.arange(0, 28651, 5730)
     r = np.log(0.5)
     t = 5730
@@ -19,5 +17,3 @@ def change_scale():
     plt.yscale('log')
     plt.plot(x, y)
     plt.show()
-
-change_scale()
