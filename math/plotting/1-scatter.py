@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Plot a scatter graph with x and y values."""
 import numpy as np
 import matplotlib.pyplot as plt
 
