@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""Module to plot a graph with a logarithmic scale."""
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Module to plot a scatter graph representing men's height vs weight."""
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -17,5 +19,3 @@ def scatter():
     plt.ylabel('Weight (lbs)')
     plt.scatter(x, y, 7, color='m')
     plt.show()
-
-scatter()
