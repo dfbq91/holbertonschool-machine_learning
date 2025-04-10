@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 
 def two():
-
+    """Plot a graph comparing two exponential decay functions."""
     x = np.arange(0, 21000, 1000)
     r = np.log(0.5)
     t1 = 5730
@@ -25,5 +25,3 @@ def two():
     plt.plot(x, y2, label='Ra-226', color='green')
     plt.legend()
     plt.show()
-
-two()
