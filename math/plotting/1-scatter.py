@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Module to plot a scatter graph representing men's height vs weight."""
 
+
 import numpy as np
 import matplotlib.pyplot as plt
 
