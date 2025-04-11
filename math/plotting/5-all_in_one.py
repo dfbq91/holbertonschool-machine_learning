@@ -36,6 +36,7 @@ def all_in_one():
     first = fig.add_subplot(3, 2, 1)
     first.plot(y0, 'r-')
     first.set_xlim((0, 10))
+    first.set_yticks([0,500,1000])
 
     second = fig.add_subplot(3, 2, 2)
     second.scatter(x1, y1, c='m')
@@ -70,8 +71,10 @@ def all_in_one():
     fifth.set_ylabel('Number of Students', fontsize='x-small')
     fifth.set_xlim((0, 100))
     fifth.set_xticks(np.arange(0, 101, 10))
+    fifth.set_yticks([0,10,20,30])
     fifth.set_ylim((0, 30))
 
     fig.suptitle("All in One")
     plt.tight_layout()
     plt.show()
+all_in_one()
