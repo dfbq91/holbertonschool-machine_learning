@@ -21,7 +21,7 @@ def two():
     plt.ylabel('Fraction Remaining')
     plt.xlim(0, 20000)
     plt.ylim(0, 1)
-    plt.plot(x, y1, label='C-14', color='r', linestyle=':')
+    plt.plot(x, y1, label='C-14', color='r', linestyle='dashed')
     plt.plot(x, y2, label='Ra-226', color='green', linestyle='-')
     plt.legend(loc='upper right')
     plt.show()
