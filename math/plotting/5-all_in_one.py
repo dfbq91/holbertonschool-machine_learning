@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
+"""Module to plot a graph with multiple subplots."""
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
-def all_in_one():
 
+def all_in_one():
+    """all in one"""
     y0 = np.arange(0, 11) ** 3
 
     mean = [69, 0]
@@ -71,5 +75,3 @@ def all_in_one():
     fig.suptitle("All in One")
     plt.tight_layout()
     plt.show()
-
-all_in_one()
