@@ -27,3 +27,4 @@ def bars():
     plt.legend((bar1, bar2, bar3, bar4), ('apples', 'bananas', 'oranges', 'peaches'))
     plt.tight_layout()
     plt.show()
+bars()
