@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 def bars():
     """Plot a bar graph with random data."""
     np.random.seed(5)
-    fruit = np.random.randint(0, 20, (4, 3))
+    fruit = np.random.randint(0, 20, (4,3))
     plt.figure(figsize=(6.4, 4.8))
     t = np.arange(3)
     bar1 = plt.bar(t, fruit[0], 0.5, color='red')
@@ -24,7 +24,6 @@ def bars():
     plt.xticks(t, ('Farrah', 'Fred', 'Felicia'))
     plt.yticks(np.arange(0, 81, 10))
     plt.ylim(0, 80)
-    plt.legend((bar1, bar2, bar3, bar4),
-               ('apples', 'bananas', 'oranges', 'peaches'))
+    plt.legend((bar1, bar2, bar3, bar4), ('apples', 'bananas', 'oranges', 'peaches'))
     plt.tight_layout()
     plt.show()
