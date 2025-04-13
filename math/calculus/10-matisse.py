@@ -9,7 +9,7 @@ def poly_derivative(poly):
         poly (list): A list of coefficients representing a polynomial.
 
     Returns:
-        list: A list of coefficients representing the derivative of the polynomial.
+        list: A list of coefficients
     """
     result = []
     if type(poly) is not list or len(poly) == 0:
