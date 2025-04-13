@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """8-ridin bareback"""
 
+
 def mat_mul(mat1, mat2):
     """Returns the product of two matrices"""
     if not isinstance(mat1, list) or not isinstance(mat2, list):
