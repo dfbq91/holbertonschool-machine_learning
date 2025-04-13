@@ -24,5 +24,3 @@ def poly_derivative(poly):
     if all(c == 0 for c in result):
         return [0]
     return result
-
-print(poly_derivative([5,3,0,1]))
