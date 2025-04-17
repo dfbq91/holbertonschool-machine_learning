@@ -26,6 +26,7 @@ class Node:
         right_child_depth = self.right_child.max_depth_below()
         return max(left_child_depth, right_child_depth)
 
+
 class Leaf(Node):
     """Leaf class for decision tree"""
     def __init__(self, value, depth=None):
@@ -37,6 +38,7 @@ class Leaf(Node):
     def max_depth_below(self):
         """Returns the depth of the leaf node"""
         return self.depth
+
 
 class Decision_Tree():
     """Decision Tree class"""
