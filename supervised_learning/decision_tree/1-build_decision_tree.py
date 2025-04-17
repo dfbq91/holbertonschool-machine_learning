@@ -25,11 +25,15 @@ class Node:
         left_child_depth = self.left_child.max_depth_below()
         right_child_depth = self.right_child.max_depth_below()
         return max(left_child_depth, right_child_depth)
-    
+
     def count_nodes_below(self, only_leaves=False):
         """Returns the number of nodes below this node"""
-        left_nodes_count = self.left_child.count_nodes_below(only_leaves=only_leaves)
-        right_nodes_count = self.right_child.count_nodes_below(only_leaves=only_leaves)
+        left_nodes_count = self.left_child.count_nodes_below(
+            only_leaves=only_leaves
+        )
+        right_nodes_count = self.right_child.count_nodes_below(
+            only_leaves=only_leaves
+        )
         if only_leaves:
             return left_nodes_count + right_nodes_count
         return 1 + left_nodes_count + right_nodes_count
@@ -46,7 +50,7 @@ class Leaf(Node):
     def max_depth_below(self):
         """Returns the depth of the leaf node"""
         return self.depth
-    
+
     def count_nodes_below(self, only_leaves=False):
         """Returns the number of nodes below this leaf"""
         return 1
