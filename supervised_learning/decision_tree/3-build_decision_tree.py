@@ -37,17 +37,19 @@ class Node:
         if only_leaves:
             return left_nodes_count + right_nodes_count
         return 1 + left_nodes_count + right_nodes_count
-    
+
     def __str__(self):
         """Returns a string representation of the node"""
         if self.is_root:
-            node_str = f"root [feature={self.feature}, threshold={self.threshold}]"
+            node_str = f"""root [feature={self.feature}, 
+                threshold={self.threshold}]"""
         else:
-            node_str = f"-> node [feature={self.feature}, threshold={self.threshold}]"
+            node_str = f"""-> node [feature={self.feature}, 
+                threshold={self.threshold}]"""
 
         left_str = str(self.left_child)
         right_str = str(self.right_child)
-        
+
         left_with_prefix = self.left_child_add_prefix(left_str)
         right_with_prefix = self.right_child_add_prefix(right_str)
 
@@ -60,10 +62,10 @@ class Node:
 
     def left_child_add_prefix(self,text):
         """Adds prefix to the left child text"""
-        lines=text.split("\n")
-        new_text="    +--"+lines[0]+"\n"
-        for x in lines[1:] :
-            new_text+=("    |  "+x)+"\n"
+        lines = text.split("\n")
+        new_text = "    +--"+lines[0] + "\n"
+        for x in lines[1:]:
+            new_text += ("    |  "+x) + "\n"
         return (new_text)
 
     def right_child_add_prefix(self, text):
@@ -73,10 +75,11 @@ class Node:
         for line in lines[1:]:
             new_text += "    " + line + "\n"
         return new_text.rstrip('\n')
-    
+
     def get_leaves_below(self):
         """Returns the leaves below this node"""
-        return self.left_child.get_leaves_below() + self.right_child.get_leaves_below()
+        return (self.left_child.get_leaves_below() +
+            self.right_child.get_leaves_below())
 
 
 class Leaf(Node):
@@ -135,4 +138,3 @@ class Decision_Tree():
     def get_leaves(self):
         """Returns the leaves of the tree"""
         return self.root.get_leaves_below()
-
