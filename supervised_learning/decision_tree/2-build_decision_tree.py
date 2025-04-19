@@ -41,9 +41,11 @@ class Node:
     def __str__(self):
         """Returns a string representation of the node"""
         if self.is_root:
-            node_str = f"root [feature={self.feature}, threshold={self.threshold}]"
+            node_str = f"""root [feature={self.feature},
+                threshold={self.threshold}]"""
         else:
-            node_str = f"-> node [feature={self.feature}, threshold={self.threshold}]"
+            node_str = f"""-> node [feature={self.feature},
+                threshold={self.threshold}]"""
 
         left_str = str(self.left_child)
         right_str = str(self.right_child)
@@ -58,7 +60,7 @@ class Node:
             result += right_with_prefix
         return result
 
-    def left_child_add_prefix(self,text):
+    def left_child_add_prefix(self, text):
         """Adds prefix to the left child text"""
         lines = text.split("\n")
         new_text ="    +--"+lines[0] + "\n"
