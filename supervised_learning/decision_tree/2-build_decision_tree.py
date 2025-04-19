@@ -37,7 +37,7 @@ class Node:
         if only_leaves:
             return left_nodes_count + right_nodes_count
         return 1 + left_nodes_count + right_nodes_count
-    
+
     def __str__(self):
         """Returns a string representation of the node"""
         if self.is_root:
@@ -47,7 +47,7 @@ class Node:
 
         left_str = str(self.left_child)
         right_str = str(self.right_child)
-        
+
         left_with_prefix = self.left_child_add_prefix(left_str)
         right_with_prefix = self.right_child_add_prefix(right_str)
 
@@ -60,10 +60,10 @@ class Node:
 
     def left_child_add_prefix(self,text):
         """Adds prefix to the left child text"""
-        lines=text.split("\n")
-        new_text="    +--"+lines[0]+"\n"
+        lines = text.split("\n")
+        new_text ="    +--"+lines[0] + "\n"
         for x in lines[1:] :
-            new_text+=("    |  "+x)+"\n"
+            new_text += ("    |  "+x) + "\n"
         return (new_text)
 
     def right_child_add_prefix(self, text):
@@ -123,4 +123,3 @@ class Decision_Tree():
     def __str__(self):
         """Returns a string representation of the tree"""
         return self.root.__str__()
-
