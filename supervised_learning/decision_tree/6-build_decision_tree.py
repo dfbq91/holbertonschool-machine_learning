@@ -115,6 +115,7 @@ class Node:
             np.all(np.array([is_large_enough(x), is_small_enough(x)]), axis=0)
 
     def pred(self, x):
+        """Returns the prediction for a single instance"""
         if x[self.feature] > self.threshold:
             return self.left_child.pred(x)
         else:
