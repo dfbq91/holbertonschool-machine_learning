@@ -80,12 +80,12 @@ class Node:
         """Returns the leaves below this node"""
         return (self.left_child.get_leaves_below() +
                 self.right_child.get_leaves_below())
-    
+
     def update_bounds_below(self):
         """Updates the bounds of the node"""
-        if self.is_root : 
-            self.upper = { 0:np.inf }
-            self.lower =  { 0:-1*np.inf }
+        if self.is_root:
+            self.upper = { 0 : np.inf }
+            self.lower =  { 0 : -1*np.inf }
 
         for child in [self.left_child, self.right_child]:
             child.upper = self.upper.copy()
@@ -122,10 +122,10 @@ class Leaf(Node):
     def get_leaves_below(self):
         """Returns the leaves below this leaf"""
         return [self]
-    
+
     def update_bounds_below(self):
         """Updates the bounds of the leaf node"""
-        pass 
+        pass
 
 
 class Decision_Tree():
@@ -159,7 +159,7 @@ class Decision_Tree():
     def get_leaves(self):
         """Returns the leaves of the tree"""
         return self.root.get_leaves_below()
-    
+
     def update_bounds(self):
         """Updates the bounds of the tree"""
         self.root.update_bounds_below()
