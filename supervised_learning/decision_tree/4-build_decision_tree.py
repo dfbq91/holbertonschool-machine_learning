@@ -57,7 +57,7 @@ class Node:
         if left_with_prefix:
             result += "\n" + left_with_prefix
         if right_with_prefix:
-            result += right_with_prefix
+            result += "\n" + right_with_prefix
         return result
 
     def left_child_add_prefix(self, text):
