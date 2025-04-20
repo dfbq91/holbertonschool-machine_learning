@@ -195,13 +195,19 @@ class Decision_Tree():
         return self.root.pred(x)
 
     def update_predict(self):
-        """Updates the predict function of the tree"""
+        """Updates the prediction function for the tree"""
         self.update_bounds()
-        leaves=self.get_leaves()
+        leaves = self.get_leaves()
         for leaf in leaves:
-            leaf.update_indicator()          
-        self.predict = (lambda A:
-                        np.array([leaf.value for leaf in leaves for i in range(len(A))
-                                  if leaf.indicator(A)[i]])
-                                  if len(leaves) > 0
-                                  else np.array([]))
+            leaf.update_indicator()
+
+        def predict(A):
+            """Returns the predictions for an array of instances"""
+            predictions = np.zeros(A.shape[0], dtype=int)
+            for i, x in enumerate(A):
+                for leaf in leaves:
+                    if leaf.indicator(np.array([x])):
+                        predictions[i] = leaf.value
+                        break
+            return predictions
+        self.predict = predict
