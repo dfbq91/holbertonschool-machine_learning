@@ -190,7 +190,7 @@ class Decision_Tree():
         """Updates the bounds of the tree"""
         self.root.update_bounds_below()
 
-    def pred(self,x):
+    def pred(self, x):
         """Returns the prediction for a single instance"""
         return self.root.pred(x)
 
