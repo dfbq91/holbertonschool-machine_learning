@@ -102,14 +102,14 @@ class Node:
         """Updates the indicator function for the node"""
 
         def is_large_enough(x):
-            """Returns a 1D numpy array of size `n_individuals` so that the `i`-th"""
+            """Returns a 1D numpy array of size `n_individuals`"""
             return np.all(np.array([x[:, key] > self.lower[key]
-                    for key in self.lower.keys()]), axis=0)
+                                    for key in self.lower.keys()]), axis=0)
 
         def is_small_enough(x):
-            """Returns a 1D numpy array of size `n_individuals` so that the `i`-th"""
+            """Returns a 1D numpy array of size `n_individuals`"""
             return np.all(np.array([x[:, key] <= self.upper[key]
-                    for key in self.upper.keys()]), axis=0)
+                                    for key in self.upper.keys()]), axis=0)
 
         self.indicator = lambda x: \
             np.all(np.array([is_large_enough(x), is_small_enough(x)]), axis=0)
