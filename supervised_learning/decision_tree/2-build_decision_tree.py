@@ -58,6 +58,9 @@ class Node:
             result += "\n" + left_with_prefix
         if right_with_prefix:
             result += right_with_prefix
+
+        if self.is_root:
+            result += "\n"
         return result
 
     def left_child_add_prefix(self, text):
