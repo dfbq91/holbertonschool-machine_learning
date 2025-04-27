@@ -23,13 +23,13 @@ class Neuron:
         self.__b = 0
         self.__A = 0
 
-    def sigmoid(Z):
+    def sigmoid(self, Z):
         """Sigmoid activation function: 1/(1 + e^(-Z))"""
         return 1 / (1 + np.exp(-Z))
 
     def forward_prop(self, X):
         """Calculates forward propagation of the neuron"""
-        Z = np.dot(self.W, X) + self.b
+        Z = np.dot(self.__W, X) + self.__b
         self.__A = self.sigmoid(Z)
         return self.__A
 
