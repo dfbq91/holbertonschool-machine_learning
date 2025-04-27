@@ -29,7 +29,7 @@ class Neuron:
 
     def forward_prop(self, X):
         """Calculates forward propagation of the neuron"""
-        Z = np.dot(self.__W, X) + self.__b
+        Z = np.dot(self.W, X) + self.b
         self.__A = self.sigmoid(Z)
         return self.__A
 
